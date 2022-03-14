@@ -6,6 +6,7 @@ body {
   letter-spacing: 0.5em;
   top: 15%;
   background: linear-gradient(to right, #ff0000, rgb(255, 255, 0));
+  height: 100vh;
 }
 
 h1 {
