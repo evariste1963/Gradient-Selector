@@ -22,7 +22,7 @@ const renderGradient = () => {
 };
 
 //run setGradient function on startup/refresh
-renderGradient();
+window.onload = renderGradient();
 
 //--random color generator--\\
 //random number generator
