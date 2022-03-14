@@ -17,4 +17,7 @@ function setGradient() {
   color.addEventListener("input", setGradient);
 });
 
-//random color generator
+//--random color generator--\\
+
+//random number generator
+const randomNoGenerator = function () {};
