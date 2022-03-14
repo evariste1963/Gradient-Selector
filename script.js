@@ -18,9 +18,11 @@ function generateColorString() {
 // render gradient
 function renderGradient() {
   const colorString = generateColorString();
-  body.style.background = colorString;
-  randomBtn.style.background = colorString;
-  direction.style.background = colorString;
+  body.style.background =
+    randomBtn.style.background =
+    direction.style.background =
+      colorString;
+
   h3.textContent = `${body.style.background};`;
 }
 
