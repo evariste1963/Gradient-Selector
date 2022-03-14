@@ -13,11 +13,20 @@ function setGradient() {
   h3.textContent = body.style.background + ";";
 }
 
+//--random color generator--\\
+//random number generator
+function randomNoGenerator() {
+  return Math.floor(Math.random() * 256);
+}
+
+// RGB generator
+function generateRGB() {
+  console.log(
+    `rgb(${randomNoGenerator()}, ${randomNoGenerator()}, ${randomNoGenerator()})`
+  );
+}
+
+//-- event listeners --||
 [color1, color2].forEach(function (color) {
   color.addEventListener("input", setGradient);
 });
-
-//--random color generator--\\
-
-//random number generator
-const randomNoGenerator = function () {};
