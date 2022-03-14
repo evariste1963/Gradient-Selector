@@ -16,3 +16,5 @@ function setGradient() {
 [color1, color2].forEach(function (color) {
   color.addEventListener("input", setGradient);
 });
+
+//random color generator
