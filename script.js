@@ -7,44 +7,39 @@ const h3 = document.querySelector("h3");
 const direction = document.querySelector("#direction");
 const randomBtn = document.querySelector("#randomBtn");
 
-//run setGradient function on startup/refresh
-renderGradient();
-
 //create color string
-function generateColorString() {
-  return `linear-gradient(to ${direction.value}, ${color1.value}, ${color2.value})`;
-}
+const generateColorString = () =>
+  `linear-gradient(to ${direction.value}, ${color1.value}, ${color2.value})`;
 
 // render gradient
-function renderGradient() {
+const renderGradient = () => {
   const colorString = generateColorString();
   body.style.background =
     randomBtn.style.background =
     direction.style.background =
       colorString;
-
   h3.textContent = `${body.style.background};`;
-}
+};
+
+//run setGradient function on startup/refresh
+renderGradient();
 
 //--random color generator--\\
 //random number generator
-function randomNoGenerator() {
-  return Math.floor(Math.random() * 256)
+const randomNoGenerator = () =>
+  Math.floor(Math.random() * 256)
     .toString(16)
     .padStart(2, 0);
-}
 
 // set and render random colors
-function setColor() {
+const setColor = () => {
   color1.value = generateColor();
   color2.value = generateColor();
   renderGradient();
-}
+};
 
-function generateColor() {
-  return `#${randomNoGenerator()}${randomNoGenerator()}${randomNoGenerator()}`;
-}
-
+const generateColor = () =>
+  `#${randomNoGenerator()}${randomNoGenerator()}${randomNoGenerator()}`;
 //-- event listeners --||
 [color1, color2].forEach(function (color) {
   color.addEventListener("input", renderGradient);
