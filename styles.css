@@ -23,7 +23,8 @@ h2 {
 }
 
 input,
-#randomBtn {
+#randomBtn,
+#direction {
   width: 8rem;
   height: 3rem;
   border-radius: 10px;
@@ -38,10 +39,15 @@ h3 {
   padding-bottom: 1.5rem;
 }
 
-#randomBtn {
+#randomBtn,
+#direction {
   border: solid 3px white;
   font: 600 1em "Raleway", sans-serif;
   color: rgba(0, 0, 0, 0.7);
+}
+
+#direction {
+  width: 5rem;
 }
 
 footer {
