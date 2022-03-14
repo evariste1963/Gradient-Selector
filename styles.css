@@ -19,6 +19,7 @@ h1 {
 h2 {
   font-family: inherit;
   letter-spacing: 0.3em;
+  margin: 1.5rem 0 0 0;
 }
 
 input,
@@ -33,6 +34,8 @@ h3 {
   color: rgba(0, 0, 0, 0.5);
   letter-spacing: 0.01em;
   text-transform: none;
+  margin-top: 0.3rem;
+  padding-bottom: 1.5rem;
 }
 
 #randomBtn {
