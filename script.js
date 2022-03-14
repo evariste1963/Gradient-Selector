@@ -17,9 +17,10 @@ function generateColorString() {
 
 // render gradient
 function renderGradient() {
-  body.style.background = generateColorString();
-  randomBtn.style.background = generateColorString();
-  direction.style.background = generateColorString();
+  const colorString = generateColorString();
+  body.style.background = colorString;
+  randomBtn.style.background = colorString;
+  direction.style.background = colorString;
   h3.textContent = `${body.style.background};`;
 }
 
@@ -39,9 +40,7 @@ function setColor() {
 }
 
 function generateColor() {
-  return `#${randomNoGenerator()}${randomNoGenerator()}${randomNoGenerator()
-    .toString(16)
-    .padStart(2, 0)}`;
+  return `#${randomNoGenerator()}${randomNoGenerator()}${randomNoGenerator()}`;
 }
 
 //-- event listeners --||
