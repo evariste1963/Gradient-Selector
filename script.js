@@ -56,7 +56,7 @@ const copyCss = () => {
         h3.style.background = "";
       },
       (err) => {
-        console.log("Failed to copy the text to clipboard.", err);
+        alert("Failed to copy the text to clipboard.", err);
       }
     );
   } else if (window.clipboardData) {
