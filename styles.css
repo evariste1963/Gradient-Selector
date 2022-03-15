@@ -23,19 +23,6 @@ h2 {
   margin: 1.5rem 0 0 0;
 }
 
-#color1,
-#color2,
-#randomBtn,
-#direction,
-input[type="number"] {
-  width: 8rem;
-  height: 3rem;
-  border-radius: 10px;
-  outline: none !important;
-  padding: 0;
-  margin: 2rem 1rem;
-}
-
 h3 {
   font: 900 1em "Raleway", sans-serif;
   color: rgba(0, 0, 0, 0.5);
@@ -49,12 +36,29 @@ h3 {
   cursor: pointer;
 }
 
+#color1,
+#color2,
+#randomBtn,
+#direction,
+#degrees {
+  width: 8rem;
+  height: 3rem;
+  border-radius: 10px;
+  outline: none !important;
+  padding: 0;
+  margin: 2rem 1rem;
+}
+
 .buttonsDiv {
   display: flex;
   flex-wrap: wrap;
-  margin: auto 0 auto 0;
+  text-align: center;
   justify-content: center;
   align-items: center;
+}
+
+p {
+  transform: translateX(-50%);
 }
 
 #randomBtn,
@@ -70,6 +74,14 @@ h3 {
   width: 10rem;
 }
 
+.degreesDiv {
+  transform: translateX(0%);
+}
+
+.directionDiv {
+  transform: translateX(-15%);
+}
+
 #degrees {
   height: 2.5rem;
   padding-inline-start: 0.5rem;
@@ -78,6 +90,10 @@ h3 {
 #randomBtn {
   width: 12em;
   height: 4rem;
+}
+
+#degrees {
+  border-inline-width: 3px;
 }
 
 footer {
@@ -103,5 +119,15 @@ footer {
   }
   .buttonsDiv {
     display: block;
+  }
+
+  .directionDiv {
+    transform: translateX(0%);
+  }
+  p {
+    transform: translateX(0%);
+  }
+  #degreesDiv {
+    transform: translateX(0%);
   }
 }
