@@ -5,11 +5,14 @@ let color1 = document.querySelector("#color1");
 let color2 = document.querySelector("#color2");
 const h3 = document.querySelector("h3");
 const direction = document.querySelector("#direction");
+const degrees = document.querySelector("#degrees");
 const randomBtn = document.querySelector("#randomBtn");
 
 //create color string
 const generateColorString = () =>
-  `linear-gradient(to ${direction.value}, ${color1.value}, ${color2.value})`;
+  degrees.value == 0
+    ? `linear-gradient(to ${direction.value}, ${color1.value}, ${color2.value})`
+    : `linear-gradient(${degrees.value}deg, ${color1.value}, ${color2.value})`;
 
 // render gradient
 const renderGradient = () => {
@@ -45,7 +48,9 @@ const generateColor = () =>
   color.addEventListener("input", renderGradient);
 });
 
+direction.addEventListener("change", renderGradient);
+
+degrees.addEventListener("change", renderGradient);
+
 //random bakground button
 randomBtn.addEventListener("click", setColor);
-
-direction.addEventListener("change", renderGradient);

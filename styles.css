@@ -40,6 +40,37 @@ h3 {
   padding-bottom: 1.5rem;
 }
 
+.buttonsDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.directionDiv {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+  font-size: 0.8rem;
+}
+
+.degreesDiv {
+  display: flex;
+  flex-direction: column;
+  width: 6rem;
+  font-size: 0.8rem;
+  padding: 4rem;
+}
+
+#degrees {
+  width: 4rem;
+}
+
+.randomBtnDiv {
+  padding: 4rem;
+}
+
 #randomBtn,
 #direction {
   border: solid 3px white;

@@ -13,8 +13,9 @@
     <input id="color2" type="color" name="color2" value="#773960" />
     <h2>Current CSS Background</h2>
     <h3></h3>
-
-    <button id="randomBtn" type="button">Randomizer</button>
+<div class="buttonsDiv">
+  <div class="directionDiv">
+    <label id="directionLabel" for="direction">Gradient Direction:</label>
     <select name="direction" id="direction">
       <option value="right">right</option>
       <option value="left">left</option>
@@ -25,6 +26,16 @@
       <option value="bottom left">bottom left</option>
       <option value="bottom right">bottom right</option>
     </select>
+  </div>
+  <div class="degreesDiv">
+    <label id="degreeLabel" for="degrees">degrees (0-360):</label>
+    <input type="number" id="degrees" name="degrees" value="2"
+       min="0" max="360">
+      </div>
+      <div class="randomBtnDiv">
+       <button id="randomBtn" type="button">Randomizer</button>
+      </div>
+</div>
     <footer>
       coded by
       <span
