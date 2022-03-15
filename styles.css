@@ -33,6 +33,7 @@ input[type="number"] {
   border-radius: 10px;
   outline: none !important;
   padding: 0;
+  margin: 2rem 1rem;
 }
 
 h3 {
@@ -49,16 +50,14 @@ h3 {
 
 .buttonsDiv {
   display: flex;
+  flex-wrap: wrap;
   margin: auto 0 auto 0;
   justify-content: center;
+  align-items: center;
 }
 
 .or {
   align-self: center;
-}
-
-#degreesLabel {
-  padding-left: 1rem;
 }
 
 #randomBtn,
@@ -69,14 +68,8 @@ h3 {
   color: rgba(0, 0, 0, 0.7);
 }
 
-#direction,
 #degrees {
-  height: 2rem;
-}
-
-#directionLabel {
-  letter-spacing: 0.4rem;
-  padding-right: 1rem;
+  height: 2.5rem;
 }
 
 #randomBtn {
