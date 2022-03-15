@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=0.86, maximum-scale=5.0, minimum-scale=0.86"
+    />
     <link rel="stylesheet" href="styles.css" />
     <title>Gradient generator</title>
   </head>
@@ -13,30 +17,31 @@
     <input id="color2" type="color" name="color2" value="#773960" />
     <h2>Current CSS Background</h2>
     <h3></h3>
-<div class="buttonsDiv">
-  <div class="directionDiv">
-    <label id="directionLabel" for="direction">Direction</label>
-    <select name="direction" id="direction">
-      <option value="right">right</option>
-      <option value="left">left</option>
-      <option value="top">top</option>
-      <option value="bottom">bottom</option>
-      <option value="top left">top left</option>
-      <option value="top right">top right</option>
-      <option value="bottom left">bottom left</option>
-      <option value="bottom right">bottom right</option>
-    </select>
-  </div>
-  <p class="or"> OR </p>
-  <div class="degreesDiv">
-        <input type="number" id="degrees" name="degrees" 
-       min="0" max="360">
-       <label id="degreesLabel" for="degrees">degrees</label>
-  </div>
-</div>
-  <div class="randomBtnDiv">
-       <button id="randomBtn" type="button">Randomizer</button>
-  </div>
+    <div class="buttonsDiv">
+      <div class="directionDiv">
+        <label id="directionLabel" for="direction">Direction</label>
+        <select name="direction" id="direction">
+          <option value="right">right</option>
+          <option value="left">left</option>
+          <option value="top">top</option>
+          <option value="bottom">bottom</option>
+          <option value="top left">top left</option>
+          <option value="top right">top right</option>
+          <option value="bottom left">bottom left</option>
+          <option value="bottom right">bottom right</option>
+        </select>
+      </div>
+
+      <p>OR</p>
+
+      <div class="degreesDiv">
+        <input type="number" id="degrees" name="degrees" min="0" max="360" />
+        <label id="degreesLabel" for="degrees">degrees</label>
+      </div>
+    </div>
+    <div class="randomBtnDiv">
+      <button id="randomBtn" type="button">Randomizer</button>
+    </div>
 
     <footer>
       coded by

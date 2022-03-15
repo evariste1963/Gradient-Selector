@@ -8,6 +8,7 @@ const direction = document.querySelector("#direction");
 const degrees = document.querySelector("#degrees");
 const randomBtn = document.querySelector("#randomBtn");
 
+////--- FUNCTIONS ---\\\\
 //create color string
 const generateColorString = () =>
   degrees.value == 0
@@ -28,7 +29,6 @@ const renderGradient = () => {
 //run setGradient function on startup/refresh
 window.onload = renderGradient();
 
-//--random color generator--\\
 //random number generator
 const randomNoGenerator = () =>
   Math.floor(Math.random() * 256)
@@ -42,12 +42,34 @@ const setColor = () => {
   renderGradient();
 };
 
+//generate color (#******)
 const generateColor = () =>
   `#${randomNoGenerator()}${randomNoGenerator()}${randomNoGenerator()}`;
-//-- event listeners --||
+
+//copy css linear-gradient to clipboard
+const copyCss = () => {
+  h3.style.background = "#fff";
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(h3.textContent).then(
+      () => {
+        alert(`${h3.textContent} Copied to clipboard successfully`);
+        h3.style.background = "";
+      },
+      (err) => {
+        console.log("Failed to copy the text to clipboard.", err);
+      }
+    );
+  } else if (window.clipboardData) {
+    window.clipboardData.setData("Text", h3.textContent);
+  }
+};
+
+//////-- EVENT LISTENERS --\\\\\\\\\
 [color1, color2].forEach(function (color) {
   color.addEventListener("input", renderGradient);
 });
+
+h3.addEventListener("click", copyCss);
 
 direction.addEventListener("change", renderGradient);
 
