@@ -20,6 +20,7 @@ const renderGradient = () => {
   body.style.background =
     randomBtn.style.background =
     direction.style.background =
+    degrees.style.background =
       colorString;
   h3.textContent = `${body.style.background};`;
 };

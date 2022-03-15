@@ -23,12 +23,16 @@ h2 {
   margin: 1.5rem 0 0 0;
 }
 
-input,
+#color1,
+#color2,
 #randomBtn,
-#direction {
+#direction,
+input[type="number"] {
   width: 8rem;
   height: 3rem;
   border-radius: 10px;
+  outline: none !important;
+  padding: 0;
 }
 
 h3 {
@@ -45,44 +49,39 @@ h3 {
 
 .buttonsDiv {
   display: flex;
-  align-items: center;
+  margin: auto 0 auto 0;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.directionDiv {
-  display: flex;
-  flex-direction: column;
-  padding: 4rem;
-  font-size: 0.8rem;
+.or {
+  align-self: center;
 }
 
-.degreesDiv {
-  display: flex;
-  flex-direction: column;
-  width: 6rem;
-  font-size: 0.8rem;
-  padding: 4rem;
-}
-
-#degrees {
-  width: 4rem;
-}
-
-.randomBtnDiv {
-  padding: 4rem;
+#degreesLabel {
+  padding-left: 1rem;
 }
 
 #randomBtn,
-#direction {
+#direction,
+#degrees {
   border: solid 3px white;
   font: 600 1em "Raleway", sans-serif;
   color: rgba(0, 0, 0, 0.7);
 }
 
-#direction {
-  outline: none !important;
+#direction,
+#degrees {
+  height: 2rem;
+}
+
+#directionLabel {
+  letter-spacing: 0.4rem;
+  padding-right: 1rem;
+}
+
+#randomBtn {
+  width: 12em;
+  height: 4rem;
 }
 
 footer {
