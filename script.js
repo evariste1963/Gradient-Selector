@@ -24,7 +24,7 @@ const renderGradient = () => {
     degrees.style.background =
       colorString;
   h3.textContent = `${body.style.background};`;
-  document.activeElement.blur();
+  document.activeElement.blur(); //remove focus from curent element -- mainly for degrees input field
 };
 
 //run setGradient function on startup/refresh
@@ -72,7 +72,10 @@ const copyCss = () => {
 
 h3.addEventListener("click", copyCss);
 
-direction.addEventListener("change", renderGradient);
+direction.addEventListener("change", () => {
+  degrees.value = 0;
+  renderGradient();
+});
 
 degrees.addEventListener("change", renderGradient);
 
