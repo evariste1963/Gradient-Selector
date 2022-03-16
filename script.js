@@ -6,6 +6,7 @@ let color2 = document.querySelector("#color2");
 const h1 = document.querySelector("h1");
 const h2 = document.querySelector("h2");
 const h3 = document.querySelector("h3");
+const option = document.querySelectorAll("option");
 const btnsDiv = document.querySelector(".buttonsDiv");
 const direction = document.querySelector("#direction");
 const degrees = document.querySelector("#degrees");
@@ -20,18 +21,20 @@ const generateColorString = () =>
 
 const compareHsp = (color1Hsp, color2Hsp) => {
   color1Hsp == "dark" && color2Hsp == "dark"
-    ? (body.style.color =
+    ? ((body.style.color =
         h1.style.color =
         direction.style.color =
         degrees.style.color =
         randomBtn.style.color =
-          "rgba(250,250,250,0.5)")
-    : (body.style.color =
+          "rgba(250,250,250,0.5)"),
+      [...option].forEach((opt) => (opt.style.background = "#838383")))
+    : ((body.style.color =
         h1.style.color =
         direction.style.color =
         degrees.style.color =
         randomBtn.style.color =
-          "rgba(0, 0, 0, 0.6)");
+          "rgba(0, 0, 0, 0.6)"),
+      [...option].forEach((opt) => (opt.style.background = "#d6d9d2")));
 };
 
 // render gradient
@@ -80,7 +83,7 @@ const copyCss = () => {
         alert(`${h3.textContent} Copied to clipboard successfully`);
         h3.style.background = "";
       },
-      err => {
+      (err) => {
         alert("Failed to copy the text to clipboard.", err);
       }
     );
@@ -89,6 +92,7 @@ const copyCss = () => {
   }
 };
 
+//thanks to https://awik.io/determine-color-bright-dark-using-javascript/ for hsp code outline
 function lightOrDark(color) {
   // Variables for red, green, blue values
   let r, g, b, hsp;
@@ -124,6 +128,8 @@ function lightOrDark(color) {
 }
 
 //////-- EVENT LISTENERS --\\\\\\\\\
+
+//needs changing to event delegation
 [color1, color2].forEach(function (color) {
   color.addEventListener("input", renderGradient);
 });
