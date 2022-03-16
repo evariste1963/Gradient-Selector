@@ -30,10 +30,19 @@ h3 {
   text-transform: none;
   width: 50%;
   padding: 1rem 1rem;
-  margin: 2rem auto;
+  margin: 0.2rem auto 2rem auto;
   border: solid 2px #fff;
   border-radius: 3rem;
   cursor: pointer;
+}
+
+h4 {
+  font-style: italic;
+  font-size: 1rem;
+  letter-spacing: normal;
+  margin: 0.1em;
+  padding-top: 1rem;
+  text-transform: none;
 }
 
 #color1,

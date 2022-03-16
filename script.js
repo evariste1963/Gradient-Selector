@@ -3,7 +3,10 @@
 const body = document.querySelector("#gradient");
 let color1 = document.querySelector("#color1");
 let color2 = document.querySelector("#color2");
+const h1 = document.querySelector("h1");
+const h2 = document.querySelector("h2");
 const h3 = document.querySelector("h3");
+const btnsDiv = document.querySelector(".buttonsDiv");
 const direction = document.querySelector("#direction");
 const degrees = document.querySelector("#degrees");
 const randomBtn = document.querySelector("#randomBtn");
@@ -15,10 +18,27 @@ const generateColorString = () =>
     ? `linear-gradient(to ${direction.value}, ${color1.value}, ${color2.value})`
     : `linear-gradient(${degrees.value}deg, ${color1.value}, ${color2.value})`;
 
+const compareHsp = (color1Hsp, color2Hsp) => {
+  console.log(color1Hsp, color2Hsp);
+  color1Hsp == "dark" && color2Hsp == "dark"
+    ? (body.style.color =
+        h1.style.color =
+        direction.style.color =
+        degrees.style.color =
+        randomBtn.style.color =
+          "rgba(250,250,250,0.5)")
+    : (body.style.color =
+        h1.style.color =
+        direction.style.color =
+        degrees.style.color =
+        randomBtn.style.color =
+          "rgba(0, 0, 0, 0.6)");
+};
+
 // render gradient
 const renderGradient = () => {
   const colorString = generateColorString();
-  console.log(colorString);
+
   body.style.background =
     randomBtn.style.background =
     direction.style.background =
@@ -26,8 +46,10 @@ const renderGradient = () => {
       colorString;
   h3.textContent = `${body.style.background};`;
   document.activeElement.blur(); //remove focus from curent element -- mainly for degrees input field
-  lightOrDark(color1.value);
-  lightOrDark(color2.value);
+  const color1Hsp = lightOrDark(color1.value);
+  const color2Hsp = lightOrDark(color2.value);
+
+  compareHsp(color1Hsp, color2Hsp);
 };
 
 //run setGradient function on startup/refresh
@@ -88,24 +110,21 @@ function lightOrDark(color) {
   } else {
     // If hex --> Convert it to RGB: http://gist.github.com/983661
     color = +("0x" + color.slice(1).replace(color.length < 5 && /./g, "$&$&"));
-    console.log("yes");
+
     r = color >> 16;
     g = (color >> 8) & 255;
     b = color & 255;
-
-    console.log(r, g, b);
   }
-
   // HSP (Highly Sensitive Poo) equation from http://alienryderflex.com/hsp.html
   hsp = Math.sqrt(0.299 * (r * r) + 0.587 * (g * g) + 0.114 * (b * b));
 
   // Using the HSP value, determine whether the color is light or dark
   if (hsp > 127.5) {
-    //return "light";
-    console.log("light");
+    return "light";
+    //console.log("light");
   } else {
-    //return "dark";
-    console.log("Dark");
+    return "dark";
+    //console.log("Dark");
   }
 }
 
