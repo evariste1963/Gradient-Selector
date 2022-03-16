@@ -19,7 +19,6 @@ const generateColorString = () =>
     : `linear-gradient(${degrees.value}deg, ${color1.value}, ${color2.value})`;
 
 const compareHsp = (color1Hsp, color2Hsp) => {
-  console.log(color1Hsp, color2Hsp);
   color1Hsp == "dark" && color2Hsp == "dark"
     ? (body.style.color =
         h1.style.color =
@@ -105,8 +104,6 @@ function lightOrDark(color) {
     r = color[1];
     g = color[2];
     b = color[3];
-
-    console.log(r, g, b);
   } else {
     // If hex --> Convert it to RGB: http://gist.github.com/983661
     color = +("0x" + color.slice(1).replace(color.length < 5 && /./g, "$&$&"));
@@ -121,10 +118,8 @@ function lightOrDark(color) {
   // Using the HSP value, determine whether the color is light or dark
   if (hsp > 127.5) {
     return "light";
-    //console.log("light");
   } else {
     return "dark";
-    //console.log("Dark");
   }
 }
 
