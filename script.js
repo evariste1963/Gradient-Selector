@@ -18,6 +18,7 @@ const generateColorString = () =>
 // render gradient
 const renderGradient = () => {
   const colorString = generateColorString();
+  console.log(colorString);
   body.style.background =
     randomBtn.style.background =
     direction.style.background =
@@ -25,6 +26,8 @@ const renderGradient = () => {
       colorString;
   h3.textContent = `${body.style.background};`;
   document.activeElement.blur(); //remove focus from curent element -- mainly for degrees input field
+  lightOrDark(color1.value);
+  lightOrDark(color2.value);
 };
 
 //run setGradient function on startup/refresh
@@ -67,11 +70,12 @@ const copyCss = () => {
 
 function lightOrDark(color) {
   // Variables for red, green, blue values
-  var r, g, b, hsp;
+  let r, g, b, hsp;
 
   // Check the format of the color, HEX or RGB?
-  if (color.match(/^rgb/)) {
-    // If RGB --> store the red, green, blue values in separate variables
+  //if (color.match(/^rgb/)) {
+  if (color.includes("RGB")) {
+    //If RGB --> store the red, green, blue values in separate variables
     color = color.match(
       /^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/
     );
@@ -79,13 +83,17 @@ function lightOrDark(color) {
     r = color[1];
     g = color[2];
     b = color[3];
+
+    console.log(r, g, b);
   } else {
     // If hex --> Convert it to RGB: http://gist.github.com/983661
     color = +("0x" + color.slice(1).replace(color.length < 5 && /./g, "$&$&"));
-
+    console.log("yes");
     r = color >> 16;
     g = (color >> 8) & 255;
     b = color & 255;
+
+    console.log(r, g, b);
   }
 
   // HSP (Highly Sensitive Poo) equation from http://alienryderflex.com/hsp.html
@@ -93,13 +101,13 @@ function lightOrDark(color) {
 
   // Using the HSP value, determine whether the color is light or dark
   if (hsp > 127.5) {
-    return "light";
+    //return "light";
+    console.log("light");
   } else {
-    return "dark";
+    //return "dark";
+    console.log("Dark");
   }
 }
-
-lightOrDark(color1.value);
 
 //////-- EVENT LISTENERS --\\\\\\\\\
 [color1, color2].forEach(function (color) {
