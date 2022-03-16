@@ -11,7 +11,7 @@ const randomBtn = document.querySelector("#randomBtn");
 ////--- FUNCTIONS ---\\\\
 //create color string
 const generateColorString = () =>
-  degrees.value == 0
+  degrees.value < 1
     ? `linear-gradient(to ${direction.value}, ${color1.value}, ${color2.value})`
     : `linear-gradient(${degrees.value}deg, ${color1.value}, ${color2.value})`;
 
@@ -55,7 +55,7 @@ const copyCss = () => {
         alert(`${h3.textContent} Copied to clipboard successfully`);
         h3.style.background = "";
       },
-      (err) => {
+      err => {
         alert("Failed to copy the text to clipboard.", err);
       }
     );
