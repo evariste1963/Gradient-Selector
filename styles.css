@@ -47,6 +47,7 @@ h3 {
   outline: none !important;
   padding: 0;
   margin: 2rem 1rem;
+  cursor: pointer;
 }
 
 .buttonsDiv {
