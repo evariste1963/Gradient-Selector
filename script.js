@@ -11,7 +11,7 @@ const randomBtn = document.querySelector("#randomBtn");
 ////--- FUNCTIONS ---\\\\
 //create color string
 const generateColorString = () =>
-  degrees.value < 1
+  +degrees.value < 1 || ""
     ? `linear-gradient(to ${direction.value}, ${color1.value}, ${color2.value})`
     : `linear-gradient(${degrees.value}deg, ${color1.value}, ${color2.value})`;
 
