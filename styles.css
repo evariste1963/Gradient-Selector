@@ -124,11 +124,34 @@ footer {
 
   .directionDiv {
     transform: translateX(0%);
+    display: block;
+  }
+
+  #direction {
+    margin: 0;
   }
   p {
     transform: translateX(0%);
   }
   #degreesDiv {
     transform: translateX(0%);
+    display: block;
+  }
+
+  #degrees {
+    margin: 0;
+  }
+
+  .btns {
+    margin: 0;
+  }
+
+  #randomBtn {
+    margin: 2rem;
+  }
+
+  footer {
+    margin: 2rem auto;
+    padding: 0;
   }
 }
